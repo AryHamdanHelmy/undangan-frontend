@@ -36,6 +36,7 @@ export default function GuestbookForm({ invitationId, onSubmitted }) {
         <form onSubmit={handleSubmit} className="space-y-3">
         <h1>Nama</h1>
         <input
+          name="guest_name"
           className={fieldClass}
           placeholder="Nama kamu"
           value={form.guest_name}
@@ -44,6 +45,7 @@ export default function GuestbookForm({ invitationId, onSubmitted }) {
         />
         <h1>Konfirmasi Kehadiran</h1>
         <select
+          name="attendance"
           className={fieldClass}
           value={form.attendance}
           onChange={(e) => setForm({ ...form, attendance: e.target.value })}
@@ -54,6 +56,7 @@ export default function GuestbookForm({ invitationId, onSubmitted }) {
         </select>
         <h1>Jumlah Tamu</h1>
         <select
+          name="guest_count"
           className={fieldClass}
           value={form.guest_count}
           onChange={(e) => setForm({ ...form, guest_count: Number(e.target.value) })}
@@ -64,6 +67,7 @@ export default function GuestbookForm({ invitationId, onSubmitted }) {
         </select>
         <h1>Ucapan & Doa</h1>
         <textarea
+          name="message"
           className={fieldClass}
           placeholder="Tulis ucapan & doa..."
           value={form.message}
