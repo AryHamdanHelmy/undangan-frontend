@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-krem: #F6F1E4;
+  --color-tinta: #2A2420;
+  --color-hijau: #1F3D2B;
+  --color-hijau-lembut: #E4EAE0;
+  --color-emas: #B8872B;
+  --font-display: "Cormorant", serif;
+  --font-body: "Jost", sans-serif;
+}
+
+body {
+  background-color: var(--color-krem);
+  color: var(--color-tinta);
+  font-family: var(--font-body);
+}
