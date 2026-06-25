@@ -1,18 +1,10 @@
-import { useEffect, useState } from 'react'
+// 
 import { useSearchParams } from 'react-router-dom'
-import { getGuest } from '../services/api'
 import BatikDivider from './BatikDivider'
 
 export default function CoverGate({ invitation, onOpen }) {
   const [searchParams] = useSearchParams()
-  const token = searchParams.get('to')
-  const [guestName, setGuestName] = useState(null)
-
-  useEffect(() => {
-    if (token) {
-      getGuest(token).then((res) => setGuestName(res.data.name))
-    }
-  }, [token])
+  const guestName = searchParams.get('to')
 
   const hasPhoto = Boolean(invitation.cover_photo)
 
@@ -55,7 +47,9 @@ export default function CoverGate({ invitation, onOpen }) {
         <p className={`font-body text-sm mt-2 ${hasPhoto ? 'text-krem/80' : 'text-tinta/70'}`}>
           Kepada Yth.
         </p>
-        <p className="font-display text-lg">{guestName ?? 'Bapak/Ibu/Saudara/i'}</p>
+        <p className="font-display text-lg">
+          {guestName ?? 'Bapak/Ibu/Saudara/i'}
+        </p>
 
         <button
           onClick={onOpen}
